@@ -1,0 +1,31 @@
+<svg [attr.viewBox]="viewBox">
+
+  <rect class="grass" x="0" y="0" [attr.width]="width" [attr.height]="height"/>
+
+  <g>
+    <line *ngFor="let num of pitch.nbDotsWidth | arrayNumber"
+    class="grid" [attr.x1]="num * dotsSpace" y1="0"
+    [attr.x2]="num * dotsSpace" [attr.y2]="height"/>
+  </g>
+
+  <g>
+    <line *ngFor="let num of pitch.nbDotsHeight | arrayNumber"
+    class="grid" x1="0" [attr.y1]="num * dotsSpace"
+    [attr.x2]="width" [attr.y2]="num * dotsSpace"/>
+  </g>
+
+  <g>
+    <g *ngFor="let dot of pitch.dots">
+      <circle *ngIf="dot.available"
+      class="dotAvailable"
+      [attr.cx]="dot.x * dotsSpace" [attr.cy]="dot.y * dotsSpace"
+      r="1"/>
+
+      <circle class="clickField"
+      (click)="dotClick(dot)"
+      [attr.cx]="dot.x * dotsSpace" [attr.cy]="dot.y * dotsSpace"
+      [attr.r]="dotsSpace / 2" />
+    </g>
+  </g>
+
+</svg>

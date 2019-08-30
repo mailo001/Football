@@ -1,0 +1,16 @@
+.grass {
+  fill: green;
+}
+
+.grid {
+  stroke: #007a00;
+  stroke-width: 1px;
+}
+
+.clickField {
+  fill: transparent;
+}
+
+.dotAvailable {
+  fill: white;
+}
