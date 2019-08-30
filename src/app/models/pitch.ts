@@ -1,4 +1,5 @@
 import { Dot } from './dot';
+import { LineType } from './line-type';
 
 export class Pitch {
   nbDotsWidth: number;
@@ -17,7 +18,8 @@ export class Pitch {
     this.dots = [];
     for (let i = 0; i < nbDotsWidth; i++) {
       for (let j = 0; j < nbDotsHeight; j++) {
-        const dot: Dot = { x: i, y: j, available: true};
+        const dot: Dot = { x: i, y: j, available: true,
+          lineX: LineType.Nothing, lineY: LineType.Nothing, lineXY: LineType.Nothing };
         this.dots.push(dot);
       }
     }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pitch, DOTS_SPACE } from '../models/pitch';
 import { FootballPitchService } from '../services/football-pitch.service';
 import { Dot } from '../models/dot';
+import { LineType } from '../models/line-type';
 
 @Component({
   selector: 'app-football-pitch',
